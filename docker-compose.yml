@@ -16,16 +16,16 @@ services:
 
   tradingflavors-server:
     build:
-      context: ./tradingflavors-server
+      context: .
     command: python tradingflavors/manage.py runserver 0:8080
     container_name: tradingflavors-server
     depends_on:
       - tradingflavors-database
-    env_file: ./tradingflavors-server/.env
+    env_file: ./tradingflavors/.env
     ports:
       - "8080:8080"
     volumes:
-      - ./tradingflavors-server:/usr/src/app/tradingflavors-server
+      - ./tradingflavors:/usr/src/app/tradingflavors
 
 volumes:
   tradingflavors-database:
