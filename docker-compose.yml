@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  tradingflavors-database:
+    container_name: tradingflavors-database
+    image: postgres:12.1-alpine
+    ports:
+      - 5433:5432
+    restart: always
+    volumes:
+      - tradingflavors-database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=abadpass
+      - POSTGRES_USER=tradingflavors
+      - POSTGRES_DB=tradingflavors
+
+  tradingflavors-server:
+    build:
+      context: ./tradingflavors-server
+    command: python tradingflavors/manage.py runserver 0:8080
+    container_name: tradingflavors-server
+    depends_on:
+      - tradingflavors-database
+    env_file: ./tradingflavors-server/.env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tradingflavors-server:/usr/src/app/tradingflavors-server
+
+volumes:
+  tradingflavors-database:
