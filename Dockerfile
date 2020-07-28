@@ -5,4 +5,4 @@ WORKDIR /code
 COPY requirements/ /code/requirements/
 RUN pip install -r requirements/prod.txt
 COPY . /code/
-CMD python tradingflavors/manage.py runserver 0.0.0.0:8000
+CMD python tradingflavors/manage.py runserver 0.0.0.0:$PORT
