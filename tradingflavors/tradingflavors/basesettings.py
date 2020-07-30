@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'tradingflavors.urls'
+ROOT_URLCONF = 'tradingflavors.tradingflavors.urls'
 
 TEMPLATES = [
     {
@@ -65,7 +65,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tradingflavors.wsgi.application'
+WSGI_APPLICATION = 'tradingflavors.tradingflavors.wsgi.application'
 
 
 # Database
