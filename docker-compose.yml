@@ -21,11 +21,11 @@ services:
     container_name: tradingflavors-server
     depends_on:
       - tradingflavors-database
-    env_file: ./tradingflavors/.env
+    # env_file: ./tradingflavors/.env
     ports:
       - "8080:8080"
     volumes:
-      - ./tradingflavors:/usr/src/app/tradingflavors
+      - ./tradingflavors:/code/tradingflavors
 
 volumes:
   tradingflavors-database:

@@ -2,3 +2,11 @@ Django==3.0.8
 djangorestframework==3.11.0
 psycopg2==2.8.5
 dj-database-url==0.5.0
+
+# Gcloud stuff
+gunicorn==20.0.4
+psycopg2-binary==2.8.4
+google-cloud-secret-manager==0.2.0
+google-auth
+django-storages[google]==1.9.1
+django-environ==0.4.5
