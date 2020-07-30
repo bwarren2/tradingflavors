@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 env_file = os.path.join(BASE_DIR,  ".env")
 
 SETTINGS_NAME = "application_settings"
-import pdb; pdb.set_trace()
+
 if not os.path.isfile('.env'):
     import google.auth
     from google.cloud import secretmanager_v1beta1 as sm
